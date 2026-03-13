@@ -7,7 +7,7 @@ My classwork from [BIMM143](https://bioboot.github.io/bimm143_W26/) at UC San Di
 
 Class 04 [R fundamentals](class04/class04.pdf)
 
-Class 05 [Data viz with ggplot](Class%2005/Class05.pdf)
+Class 05 [Data viz with ggplot](Class%2005/Class05.md)
 
 Class 06 [R functions](Class%2006/Class06.pdf)
 
