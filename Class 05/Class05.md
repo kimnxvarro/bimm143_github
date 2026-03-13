@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Class 5: Data Viz with ggplot
 Kimberly Navarro (A17485724)
 
@@ -59,20 +58,6 @@ as a data.frame 2. The **aes** or aesthetics that map the data to the
 plot 3. The **geom** or geometry i.e. the plot type such as plots,
 lines, etc
 
-``` r
-=======
----
-title: "Class 5: Data Viz with ggplot"
-author: "Kimberly Navarro (A17485724)"
-format: gfm
-toc: true
----
-
-## Background
-
-There are lot's of ways to make plots in R. These include so-called "base R" (like the 'plot()') and add on packages like **ggplot2**
-
-Lets make the same plot with these two graphics systems. We can use the inbuilt 'cars' dataset: 
 
 ```{r}
 head(cars)
