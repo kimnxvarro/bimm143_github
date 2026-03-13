@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Class 5: Data Viz with ggplot
 Kimberly Navarro (A17485724)
 
@@ -59,15 +60,61 @@ plot 3. The **geom** or geometry i.e. the plot type such as plots,
 lines, etc
 
 ``` r
+=======
+---
+title: "Class 5: Data Viz with ggplot"
+author: "Kimberly Navarro (A17485724)"
+format: gfm
+toc: true
+---
+
+## Background
+
+There are lot's of ways to make plots in R. These include so-called "base R" (like the 'plot()') and add on packages like **ggplot2**
+
+Lets make the same plot with these two graphics systems. We can use the inbuilt 'cars' dataset: 
+
+```{r}
+head(cars)
+```
+
+With "base R" we can simply:
+```{r}
+plot (cars)
+```
+
+Now lets try ggplot. First I need to install the package using `install.packages("ggplot2")`
+
+> **N.B.** We newver run on an 'install.packages()' in a code chunk otherwise we will re-install needlessly everytime we render our document.
+
+Every time we want to use an add on package we need to load it up with a call to `library()` 
+
+install.packages("ggplot2")
+
+```{r}
+library(ggplot2)
+ggplot(cars)
+```
+Every ggplot needs at least 3 things:
+1. The **data** i.e. stuff to plot as a data.frame
+2. The **aes** or aesthetics that map the data to the plot
+3. The **geom** or geometry i.e. the plot type such as plots, lines, etc
+
+```{r}
+>>>>>>> 6d0ef045b64e410e3f7fb982fdf43659cb4bf65c
 ggplot(cars)+
   aes(x=speed, y=dist) +
   geom_point()+
   geom_line()
 ```
+<<<<<<< HEAD
 
 ![](Class05_files/figure-commonmark/unnamed-chunk-4-1.png)
 
 ``` r
+=======
+```{r}
+>>>>>>> 6d0ef045b64e410e3f7fb982fdf43659cb4bf65c
 ggplot(cars) +
   aes(x=speed, y=dist) +
   geom_point() +
@@ -78,6 +125,7 @@ ggplot(cars) +
   theme_bw()
 ```
 
+<<<<<<< HEAD
     `geom_smooth()` using formula = 'y ~ x'
 
 ![](Class05_files/figure-commonmark/unnamed-chunk-5-1.png)
@@ -88,11 +136,23 @@ Read some data on the effectes of GLP-1 inhibitor (drug) on gene
 expression values:
 
 ``` r
+=======
+
+
+
+
+
+## Gene Expression Plot
+
+Read some data on the effectes of GLP-1 inhibitor (drug) on gene expression values:
+```{r}
+>>>>>>> 6d0ef045b64e410e3f7fb982fdf43659cb4bf65c
 url <- "https://bioboot.github.io/bimm143_S20/class-material/up_down_expression.txt"
 genes <- read.delim(url)
 head(genes)
 ```
 
+<<<<<<< HEAD
             Gene Condition1 Condition2      State
     1      A4GNT -3.6808610 -3.4401355 unchanging
     2       AAAS  4.5479580  4.3864126 unchanging
@@ -104,11 +164,17 @@ head(genes)
 Version 1 plot - start simple by getting some ink on the same page.
 
 ``` r
+=======
+Version 1 plot - start simple by getting some ink on the same page.
+
+```{r}
+>>>>>>> 6d0ef045b64e410e3f7fb982fdf43659cb4bf65c
 ggplot(genes) +
   aes(x=Condition1, y=Condition2) +
   geom_point(col="blue", alpha= 0.2)
 ```
 
+<<<<<<< HEAD
 ![](Class05_files/figure-commonmark/unnamed-chunk-7-1.png)
 
 Let’s color by `State` up, down or no change.
@@ -122,6 +188,13 @@ table(genes$State)
             72       4997        127 
 
 ``` r
+=======
+Let's color by `State` up, down or no change.
+```{r}
+table(genes$State)
+```
+```{r}
+>>>>>>> 6d0ef045b64e410e3f7fb982fdf43659cb4bf65c
 ggplot(genes) +
   aes(x=Condition1, y=Condition2, col=State) +
   geom_point() + 
@@ -131,6 +204,7 @@ ggplot(genes) +
        title= "Expression changes with GLP-1 drug")
 ```
 
+<<<<<<< HEAD
 ![](Class05_files/figure-commonmark/unnamed-chunk-9-1.png)
 
 ## Going further with gapmider
@@ -138,6 +212,13 @@ ggplot(genes) +
 Here we explore the famous `gapmider` dataset with some custom plots
 
 ``` r
+=======
+## Going further with gapmider 
+
+Here we explore the famous `gapmider` dataset with some custom plots
+
+```{r}
+>>>>>>> 6d0ef045b64e410e3f7fb982fdf43659cb4bf65c
 # File location online
 url <- "https://raw.githubusercontent.com/jennybc/gapminder/master/inst/extdata/gapminder.tsv"
 
@@ -145,6 +226,7 @@ gapminder <- read.delim(url)
 head(gapminder)
 ```
 
+<<<<<<< HEAD
           country continent year lifeExp      pop gdpPercap
     1 Afghanistan      Asia 1952  28.801  8425333  779.4453
     2 Afghanistan      Asia 1957  30.332  9240934  820.8530
@@ -174,18 +256,41 @@ table(gapminder$continent)
 Version 1 plot gdpPercap vs. LifeExp for all rows
 
 ``` r
+=======
+> Q. How many roes does this dataset have?
+
+```{r}
+nrow(gapminder)
+```
+
+> How many different contients are in this dataset?
+
+```{r}
+table(gapminder$continent)
+```
+
+Version 1 plot gdpPercap vs. LifeExp for all rows
+
+```{r}
+>>>>>>> 6d0ef045b64e410e3f7fb982fdf43659cb4bf65c
 ggplot(gapminder)+
   aes(gdpPercap, lifeExp, col=continent) +
   geom_point() +
   scale_color_manual(values= c("red", "blue", "purple", "magenta", "orange"))
 ```
 
+<<<<<<< HEAD
 ![](Class05_files/figure-commonmark/unnamed-chunk-13-1.png)
 
 I want to see a plot for each continent- in ggplot lingo this is called
 “faceting”
 
 ``` r
+=======
+I want to see a plot for each continent- in ggplot lingo this is called "faceting"
+
+```{r}
+>>>>>>> 6d0ef045b64e410e3f7fb982fdf43659cb4bf65c
 ggplot(gapminder)+
   aes(gdpPercap, lifeExp, col=continent) +
   geom_point() +
@@ -193,6 +298,7 @@ ggplot(gapminder)+
   facet_wrap(~continent)
 ```
 
+<<<<<<< HEAD
 ![](Class05_files/figure-commonmark/unnamed-chunk-14-1.png)
 
 ## First look at the dplyr package
@@ -229,6 +335,27 @@ input <- filter(gapminder, year == 2007 | year == 1977)
 ```
 
 ``` r
+=======
+## First look at the dplyr package
+
+Another add-on package with a function called `filter()` that we want to use.
+
+install.packages("dplyr")
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+filter(gapminder, year== 2007, country=="Ireland")
+```
+
+```{r}
+input <- filter(gapminder, year == 2007 | year == 1977)
+```
+
+```{r}
+>>>>>>> 6d0ef045b64e410e3f7fb982fdf43659cb4bf65c
 ggplot(input)+
   aes(gdpPercap, lifeExp, col=continent) +
   geom_point() +
@@ -236,4 +363,7 @@ ggplot(input)+
   facet_wrap(~year)
 ```
 
+<<<<<<< HEAD
 ![](Class05_files/figure-commonmark/unnamed-chunk-18-1.png)
+=======
+>>>>>>> 6d0ef045b64e410e3f7fb982fdf43659cb4bf65c
