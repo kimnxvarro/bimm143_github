@@ -9,4 +9,10 @@ Class 04 [R fundamentals](Class04/class04.pdf)
 
 Class 05 [Data viz with ggplot](Class%2005/Class05.pdf)
 
+Class 06 [R functions](Class%2006/Class06.pdf)
 
+Class 07 [Machine Learning](Class%2007/Class07:%20Machine%20Learning%201.pdf)
+
+Class 08 [Breast Cancer](Class%2008:%20Breast%20Cancer/Class08.pdf)
+
+Class 09 [Candy Mini Project](Class09/Class09--Candy-Mini-Project.pdf)
