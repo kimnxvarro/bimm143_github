@@ -1,7 +1,7 @@
 ---
 title: "Class 5: Data Viz with ggplot"
 author: "Kimberly Navarro (A17485724)"
-format: pdf
+format: gfm
 toc: true
 ---
 
