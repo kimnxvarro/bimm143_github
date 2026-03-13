@@ -1,0 +1,118 @@
+---
+title: "Class 17"
+author: "Kimberly Navarro"
+date: "2026-03-04"
+format: pdf
+---
+
+## Downstream Analysis
+
+Download "txtimport" and "rhdf5" in terminal using BiocManager.
+
+BiocManager::install("tximport") & 
+BiocManager::install("rhdf5")
+
+```{r}
+library(tximport)
+
+folders <- dir(pattern="SRR21568*")
+samples <- sub("_quant", "", folders)
+files <- file.path( folders, "abundance.h5" )
+names(files) <- samples
+txi.kallisto <- tximport(files, type = "kallisto", txOut = TRUE)
+```
+Estimate transcript counts per sample:
+
+```{r}
+head(txi.kallisto$counts)
+```
+
+Transcripts per sample: 
+
+```{r}
+colSums(txi.kallisto$counts)
+```
+
+Transcripts detected in at least one sample: 
+
+```{r}
+sum(rowSums(txi.kallisto$counts)>0)
+```
+
+Filter out annotated transcripts with no reads: 
+
+```{r}
+to.keep <- rowSums(txi.kallisto$counts) > 0
+kset.nonzero <- txi.kallisto$counts[to.keep,]
+```
+
+Filter out those with no change over the samples:
+
+```{r}
+keep2 <- apply(kset.nonzero,1,sd)>0
+x <- kset.nonzero[keep2,]
+```
+
+## Principal Component Analysis
+
+Now we compute the principal components, centering and scaling each transcript’s measured levels so that each feature contributes equally to the PCA:
+
+```{r}
+pca <- prcomp(t(x), scale=TRUE)
+```
+
+```{r}
+summary(pca)
+```
+
+```{r}
+plot(pca$x[,1], pca$x[,2],
+     col=c("blue","blue","red","red"),
+     xlab="PC1", ylab="PC2", pch=16)
+```
+>Q. Use ggplot to make a similar figure of PC1 vs PC2 and a separate figure PC1 vs PC3 and PC2 vs PC3.
+
+PC1 vs PC2 plot:
+
+```{r}
+library(ggplot2)
+library(ggrepel)
+
+mycols <- c("blue","blue","red","red")
+
+ggplot(pca$x) +
+  aes(PC1, PC2, label=rownames(pca$x)) +
+  geom_point( col=mycols ) +
+  geom_text_repel( col=mycols ) +
+  theme_bw()
+```
+
+PC1 vs PC3 plot:
+
+```{r}
+library(ggplot2)
+library(ggrepel)
+
+mycols <- c("blue","blue","red","red")
+
+ggplot(pca$x) +
+  aes(PC1, PC3, label=rownames(pca$x)) +
+  geom_point( col=mycols ) +
+  geom_text_repel( col=mycols ) +
+  theme_bw()
+```
+
+PC2 vs PC3 plot:
+
+```{r}
+library(ggplot2)
+library(ggrepel)
+
+mycols <- c("blue","blue","red","red")
+
+ggplot(pca$x) +
+  aes(PC2, PC3, label=rownames(pca$x)) +
+  geom_point( col=mycols ) +
+  geom_text_repel( col=mycols ) +
+  theme_bw()
+```
