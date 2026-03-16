@@ -27,7 +27,8 @@ Class 10 [Structural Bioinformatics pt.1](Class10-Structural-Bioinformatics--pt.
 
 Class 11 [AlphaFold](Class%2011/Class11.pdf)
 
-Class 12 [RNASeq Galaxy](Class%2012/Lab12_Galaxy.pdf)
+Class 12 [RNASeq Galaxy](Class%2012/Lab%2012_%20Galaxy.pdf)
+
 
 
 
