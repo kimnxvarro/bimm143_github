@@ -102,7 +102,7 @@ The `sample()` function in R…?
 sample(1:10, size=4)
 ```
 
-    [1]  6 10  7  4
+    [1] 6 8 4 5
 
 > Q. Return 12 numbers picked randomly from the input 1:10
 
@@ -110,7 +110,7 @@ sample(1:10, size=4)
 sample(1:10, size=12, replace=TRUE)
 ```
 
-     [1] 7 6 9 7 7 5 4 6 4 2 2 1
+     [1] 1 6 5 3 6 5 3 2 2 5 1 9
 
 > Q. Write the code to generate a random 12 nucleotide long DNA
 > sequence?
@@ -120,7 +120,7 @@ bases <- c("A","C","G","T")
 sample(bases, size=12, replace=TRUE)
 ```
 
-     [1] "C" "C" "C" "C" "T" "C" "G" "A" "G" "C" "C" "T"
+     [1] "G" "T" "C" "C" "T" "A" "T" "T" "A" "G" "A" "C"
 
 > Q. Write a first version function called `generate_dna()` that
 > generates a user specificed length `n` random DNA sequence?
@@ -136,12 +136,12 @@ generate_dna <- function(n=6) {
 generate_dna(100)
 ```
 
-      [1] "T" "C" "C" "G" "C" "C" "A" "T" "A" "G" "T" "C" "G" "A" "G" "A" "A" "G"
-     [19] "A" "G" "G" "A" "G" "A" "A" "G" "G" "A" "C" "G" "C" "T" "C" "C" "A" "T"
-     [37] "T" "A" "T" "A" "G" "C" "A" "C" "A" "A" "C" "A" "G" "T" "C" "T" "G" "A"
-     [55] "G" "A" "A" "T" "A" "A" "C" "G" "C" "T" "T" "G" "C" "C" "C" "T" "A" "T"
-     [73] "T" "C" "C" "T" "T" "C" "T" "C" "A" "G" "C" "T" "G" "T" "A" "T" "A" "A"
-     [91] "C" "G" "A" "C" "G" "C" "T" "C" "A" "A"
+      [1] "A" "C" "G" "A" "C" "A" "A" "A" "G" "A" "G" "C" "T" "T" "A" "C" "A" "T"
+     [19] "C" "G" "T" "C" "A" "G" "C" "A" "C" "A" "G" "T" "T" "C" "T" "C" "A" "T"
+     [37] "G" "C" "C" "G" "G" "T" "T" "A" "G" "C" "T" "C" "A" "C" "T" "A" "G" "C"
+     [55] "T" "A" "C" "T" "C" "T" "T" "T" "T" "G" "G" "G" "C" "T" "G" "A" "T" "C"
+     [73] "G" "C" "C" "C" "G" "T" "A" "A" "T" "C" "T" "C" "A" "C" "A" "C" "C" "T"
+     [91] "A" "A" "C" "C" "A" "G" "C" "G" "T" "G"
 
 > Q. Modify your function to return a FASTA like sequence so rather than
 > \[1\] ““A” “T” “C” “C” “G” we want “ATCCG”
@@ -159,7 +159,7 @@ generate_dna <- function(n=6) {
 generate_dna(10)
 ```
 
-    [1] "ACAGCGGGCG"
+    [1] "ACGGCGGTCA"
 
 ``` r
 x<- 100
@@ -195,7 +195,7 @@ generate_dna(10)
 
     Hello...
 
-    [1] "GTTATCAGCG"
+    [1] "CCCTGGGGTT"
 
 ``` r
 generate_dna(10, fasta=F)
@@ -203,7 +203,7 @@ generate_dna(10, fasta=F)
 
     ...is it me you are looking for...
 
-     [1] "A" "T" "A" "C" "C" "T" "A" "G" "G" "C"
+     [1] "A" "T" "G" "T" "C" "C" "A" "C" "A" "A"
 
 ## A new cool function
 
@@ -225,7 +225,7 @@ generate_protein <- function(n){
 generate_protein(10)
 ```
 
-    [1] "MFLKYLPWCC"
+    [1] "TSMKHFEPGL"
 
 > Q. Use your new `generate_protein()` function to generate all
 > sequences between length 6 and 12 amino-acids in length and check if
@@ -236,43 +236,43 @@ generate_protein(10)
 generate_protein(6)
 ```
 
-    [1] "MMKVED"
+    [1] "SLINYL"
 
 ``` r
 generate_protein(7)
 ```
 
-    [1] "PESYMAA"
+    [1] "THMINEQ"
 
 ``` r
 generate_protein(8)
 ```
 
-    [1] "WRWCFIDR"
+    [1] "YEWLAILW"
 
 ``` r
 generate_protein(9)
 ```
 
-    [1] "IDLYCTNRN"
+    [1] "IIGNLFPFS"
 
 ``` r
 generate_protein(10)
 ```
 
-    [1] "CILLHCKWCD"
+    [1] "MTTMVVSHEV"
 
 ``` r
 generate_protein(11)
 ```
 
-    [1] "IEDFLPPCNPV"
+    [1] "PMMWNYKCVQR"
 
 ``` r
 generate_protein(12)
 ```
 
-    [1] "STMEMQKPWAMS"
+    [1] "SSAGYQNAYLLF"
 
 Or we could do a `for()` loop:
 
@@ -284,18 +284,18 @@ for(i in 6:12) {
 ```
 
     >6
-    PKVYRN 
+    EYMWNQ 
     >7
-    WRMRQWQ 
+    WIEYENG 
     >8
-    IDCQIGEF 
+    RHKSWPDT 
     >9
-    PCECPIMAH 
+    FKMFYLIQM 
     >10
-    QTHDEKEHIH 
+    ECRGNAGCLE 
     >11
-    PRMHGFFWANC 
+    ETDHDHTEYVI 
     >12
-    SMTRQCMENDKN 
+    SAFRAHPIIGGI 
 
 Results: Only 6-8 were found within the NCBI database.

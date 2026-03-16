@@ -1,7 +1,7 @@
 ---
 title: "Class 06: R Functions"
 author: "Kimberly Navarro"
-format: pdf
+format: gfm
 toc: TRUE
 ---
 
