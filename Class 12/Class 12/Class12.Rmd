@@ -1,0 +1,12 @@
+---
+title: "Class 12"
+author: "Kimberly Navarro"
+date: "2026-02-15"
+output: pdf
+---
+
+```{r setup, include= FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Section 1. Proportion of G/G in a population
