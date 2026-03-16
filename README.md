@@ -13,7 +13,7 @@ Class 03 [Advanceed Database Searching](class3.pdf)
 
 Class 04 [R fundamentals](class04/class04.pdf)
 
-Class 05 [Data viz with ggplot](Class%2005/Class05.md)
+Class 05 [Data viz with ggplot](Class%2005/Class05.pdf)
 
 Class 06 [R functions](Class%2006/Class06.md)
 
