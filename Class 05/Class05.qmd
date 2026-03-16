@@ -1,3 +1,10 @@
+---
+title: "Class 5: Data Viz with ggplot"
+author: "Kimberly Navarro (A17485724)"
+format: gfm
+toc: true
+---
+
 # Class 5: Data Viz with ggplot
 Kimberly Navarro (A17485724)
 
