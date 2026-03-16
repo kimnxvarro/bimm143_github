@@ -23,3 +23,8 @@ Class 08 [Breast Cancer](Class%2008:%20Breast%20Cancer/Class08.pdf)
 
 Class 09 [Candy Mini Project](Class09/Class09--Candy-Mini-Project.pdf)
 
+Class 10 [Structural Bioinformatics pt.1](Class10-Structural-Bioinformatics--pt.1-.pdf)
+
+Class 11 [AlphaFold](Class%2011/Class11.md)
+
+
