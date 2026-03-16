@@ -9,7 +9,9 @@ Class 01 [Bioinformatics Databases and Key Online Resource](class1.pdf)
 
 Class 02 [Sequence Alignment and Database Searching](class2.pdf)
 
-Class 04 [R fundamentals](class04/class04.md)
+Class 03 [Advanceed Database Searching](class3.pdf)
+
+Class 04 [R fundamentals](class04/class04.pdf)
 
 Class 05 [Data viz with ggplot](Class%2005/Class05.md)
 
