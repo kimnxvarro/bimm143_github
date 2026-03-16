@@ -33,7 +33,7 @@ Class 13 [Deseq Lab](Class%2013/Class-13.pdf)
 
 Class 14 [DESeq2 mini project](Class14/Class14.pdf)
 
-Class 15
+Class 15 [Unix notes](unix_notes.md)
 
 Class 16 [Unix Basics](hw16.pdf)
 
@@ -43,5 +43,6 @@ Class 18 [Pertussis Mini Project](class18/Class%2018/class18.pdf)
 
 Class 19 [Cancer Mutation Mini Project](lab19.pdf)
 
+Project [Find A Gene Project](Find%20A%20Gene%20Project%20(1).pdf)
 
 
