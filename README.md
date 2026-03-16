@@ -29,6 +29,19 @@ Class 11 [AlphaFold](Class%2011/Class11.pdf)
 
 Class 12 [RNASeq Galaxy](Class%2012/Lab%2012_%20Galaxy.pdf)
 
+Class 13 [Deseq Lab](Class%2013/Class-13.pdf)
+
+Class 14 [DESeq2 mini project](Class14/Class14.pdf)
+
+Class 15
+
+Class 16 [Unix Basics](hw16.pdf)
+
+Class 17 [Analyzing sequencing data in the cloud](class17/class17.pdf)
+
+Class 18 [Pertussis Mini Project](class18/Class%2018/class18.pdf)
+
+Class 19 [Cancer Mutation Mini Project](lab19.pdf)
 
 
 
